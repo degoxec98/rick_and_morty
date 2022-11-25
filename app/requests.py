@@ -1,5 +1,5 @@
 import requests
-from .models.rick_y_morty import Personajes
+from .models.personaje import Personaje
         
 
 class Request:
@@ -17,7 +17,7 @@ class Request:
         characters = []
         for character in results:
             characters.append(
-                Personajes(character.get('id'),
+                Personaje(character.get('id'),
                            character.get('name'),
                            character.get('status'),
                            character.get('gender'),
