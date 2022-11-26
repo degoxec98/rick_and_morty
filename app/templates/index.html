@@ -4,7 +4,20 @@
 
 <h1>Rick y Morty API</h1>
 
+<div class="container">
 
-
+    {% for personaje in personajes %}
+        <a href="{{ url_for('rick_y_morty.profile', id=personaje['id']) }}">
+            <div class="container-character">
+                <img src="{{personaje['image']}}" alt="personaje">
+                <p>{{personaje['id']}}</p>
+                <p>{{personaje['name']}}</p>
+                <p>{{personaje['status']}}</p>
+                <p>{{personaje['gender']}}</p>
+            </div>
+        </a>
+    {% endfor %}
+    
+</div>
 
 {% endblock content %}
